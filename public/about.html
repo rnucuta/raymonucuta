@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RaymoVerse</title>
+  <link href="img/favicontree.ico" rel="icon" type="image/x-icon" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+  <link rel='stylesheet' href='css/ewxggx.css'>
+  <script src="animejs/anime.min.js"></script>
+  <style type="text/css">
+  html { overflow-y: hidden; overflow-x: hidden;}
+  button:hover {
+      cursor: url(img/mandelbrotcursornew.png), pointer;
+    }
+    html{
+      min-height: 100%;
+    }
+    html:hover {
+      cursor: url(img/mandelbrotcursor12.png), auto;
+    }
+body {
+    background: linear-gradient(132deg, #ec5218, #1665c1);
+    background-size: 400% 400%;
+    animation: BackgroundGradient 30s ease infinite;
+}
+
+@keyframes BackgroundGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-family: Open Sans, sans-serif;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;
+    background-color: #000;
+    padding: 5px;
+}
+
+
+</style>
+</head>
+<body>
+<canvas class="fireworks" style="z-index: 100;"></canvas>
+<canvas id="gif" class="example"></canvas>
+
+<script src='js/ymlarg.js'></script>
+<script src="js/index.js"></script>
+<script src="gifler/gifler.min.js"></script>
+<script type="text/javascript">
+var canvas = document.getElementById("gif");
+var ctx1 = canvas.getContext("2d");
+var x;
+var y;
+function draw(){
+  x =(Math.random()*(window.innerWidth-300)).toString()+"px";
+  y =(Math.random()*(window.innerHeight-300)).toString()+"px";
+  canvas.style.left=x;
+  canvas.style.top=y;
+  canvas.style.position = "absolute";
+  console.log("x: "+x);
+  console.log("y: "+y);
+  gifler('img/octopusanimationcrop.gif').animate('.example');
+}
+draw();
+setInterval(function(){ctx1.clearRect(0, 0, canvas.width, canvas.height);draw();}, 3000);
+</script>
+<script>
+  var lineDrawing = anime({
+  targets: '#lineDrawing .lines path',
+  strokeDashoffset: [anime.setDashoffset, 0],
+  easing: 'easeInOutSine',
+  duration: 1500,
+  delay: function(el, i) { return i * 250 },
+  direction: 'alternate',
+  loop: false
+});
+</script>
+
+</body>
+<!-- <script src="main.js"></script> -->
+</html>
