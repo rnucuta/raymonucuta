@@ -5,15 +5,18 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RaymoVerse</title>
-  <link href="img/favicontree.ico" rel="icon" type="image/x-icon" />
+  <title>About</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
   <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
   <link rel='stylesheet' href='css/ewxggx.css'>
   <script src="animejs/anime.min.js"></script>
+  <link rel="stylesheet" href="css/about.css">
+  
   <style type="text/css">
   html { overflow-y: hidden; overflow-x: hidden;}
-  button:hover {
+  a:hover {
       cursor: url(img/mandelbrotcursornew.png), pointer;
     }
     html{
@@ -22,23 +25,98 @@
     html:hover {
       cursor: url(img/mandelbrotcursor12.png), auto;
     }
-body {
-    background: linear-gradient(132deg, #ec5218, #1665c1);
-    background-size: 400% 400%;
-    animation: BackgroundGradient 30s ease infinite;
-}
+    .center {
+      /* display: block;
+      margin-left: auto;
+      margin-right: auto; */
+      position: absolute;
+      left: -20%;
+      width: 150%;
+      transform: translate(-100%, 30%);
+      /* text-align:center;
+    display:block; */
+      /* height: 50%; */
+    }
+    .fav{
+      width: 150%;
+      position: fixed;
+      left: -50%;
+      width: 50%;
+      transform: translateY(-10%);
+    }
+    .middle{
+      position: absolute;
+      top:5%;
+      right: 10%;
+      transform: translateY(10%);
+    }
+    .btn{
+      position: relative;
+      display: block;
+      color: white;
+      font-size:1em;
+      text-decoration:none;
+      margin:30px 0;
+      border: 2px solid #FFF;
+      padding: 10px 50px;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: 1s all ease;
+      font-family: "Lucida Console", Monaco, monospace;
+    }
 
-@keyframes BackgroundGradient {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
+    .btn::before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index:-1;
+      transition: all 0.6s ease;
+    }
+    .btn1::before{
+      width:0;
+      height: 100%;
+    }
+    .btn:hover::before{
+      width: 500%;
+    }
+
+    .btn2::before{
+      background: #00b894;
+      width:100%;
+      height:0;
+    }
+
+    .btn2::before{
+      height: 100%;
+    }
+    .btn3::before{
+
+      background: #0984e3;
+      width:100%;
+      height:0;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .btn3:hover::before{
+      height:380%;
+    }
+    .btn4::before{
+      background: #d63031;
+      width:100%;
+      height:0;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    .btn4:hover::before{
+      height:380%;
+    }
+    .btn2, .btn3, .btn4 {display:inline-block;}
 h1 {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    font-family: Open Sans, sans-serif;
+    font-family: "Lucida Console", Monaco, monospace;
     color: #fff;
     font-weight: 400;
     text-transform: uppercase;
@@ -47,17 +125,53 @@ h1 {
     background-color: #000;
     padding: 5px;
 }
-
+<style id="__jsx-2158783874">
+.title.jsx-2158783874 h2.jsx-2158783874{-webkit-letter-spacing:10px;-moz-letter-spacing:10px;-ms-letter-spacing:10px;letter-spacing:10px;font-size:1.2em;text-align:center;
+/* font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */}
+.title.jsx-2158783874 .subText.jsx-2158783874{text-align:center;font-size:0.5em;}
+.homeSouth.jsx-2158783874{text-align:center;position:absolute;bottom:0;font-size:0.8em;color:white;font-family: "Lucida Console", Monaco, monospace;}
+.homeSouth2.jsx-2158783874{text-align:center;position:absolute;bottom:0;right:10px;font-size:0.8em;color:white;font-family: "Lucida Console", Monaco, monospace;}
+.homeSouth.jsx-2158783874 p.jsx-2158783874{margin:10px;}</style>
 
 </style>
 </head>
 <body>
-<canvas class="fireworks" style="z-index: 100;"></canvas>
+  <canvas id="game" width="128" height="128"></canvas>
+  <div id="typedtext" class="type"></div>
+  <div id="__next"><div class="jsx-2158783874" data-reactroot=""><div class="jsx-2158783874 homeSouth"><p class="jsx-2158783874 ctext">Note: Refresh the page if the octopus glitches!</p></div><div class="jsx-2158783874 homeSouth2"><p>&#169; Raymond Nucuta</p></div></div></div>
+  <div class="middle">
+    <img src="img/favicontree.ico" class="fav"/>
+    <a href="index.html"><img src="img/raymograd1.png" alt="RaymoVerse" class="center"></a>
+    <a href="projects.html" class="btn btn3">Projects</a>
+    <a href="about.html" class="btn btn2">About</a>
+    <a onclick="githubgo()" class="btn btn4">Github</a>
+  </div>
+
+  <audio id="player" src="Sound/1.mp3" autoplay>
+<p>If you are reading this, it is because your browser does not support the audio element.</p>
+  <embed src="Sound/1.mp3" width="180" height="90" loop="false" autostart="false" hidden="true" />
+  </audio>
+  <!-- <div id="player">
+      <audio autoplay hidden>
+       <source src="Sound/1.mp3" type="audio/mpeg" loop="true">
+                  If you're reading this, audio isn't supported.
+      </audio>
+  </div> -->
 <canvas id="gif" class="example"></canvas>
 
+<!-- <p class="line anim-typewriter">Hi, I'm Raymond. I'm a high school sophomore who likes programming and tinkering. I've started multiple apps for my company Nucuta Innovations, LLC. and I am currently an intern at Kronos Consulting, LLC. When not working or messing around with code, I use GIMP to make art or work on my electrical motorized bike. I love tinkering and building cool stuff with Arduinos! Check out my Github page or my projects page to see cool projects I am working on or have finished.</p> -->
+<canvas class="fireworks"></canvas>
 <script src='js/ymlarg.js'></script>
 <script src="js/index.js"></script>
 <script src="gifler/gifler.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<script>
+var typed = new Typed(".element", {
+  strings: ["This is a JavaScript library", "This is an ES6 module"],
+  smartBackspace: true // Default value
+});
+</script> -->
+<script src='js/type.js'></script>
 <script type="text/javascript">
 var canvas = document.getElementById("gif");
 var ctx1 = canvas.getContext("2d");
@@ -69,8 +183,8 @@ function draw(){
   canvas.style.left=x;
   canvas.style.top=y;
   canvas.style.position = "absolute";
-  console.log("x: "+x);
-  console.log("y: "+y);
+  // console.log("x: "+x);
+  // console.log("y: "+y);
   gifler('img/octopusanimationcrop.gif').animate('.example');
 }
 draw();
@@ -86,6 +200,15 @@ setInterval(function(){ctx1.clearRect(0, 0, canvas.width, canvas.height);draw();
   direction: 'alternate',
   loop: false
 });
+</script>
+<script>
+  myAudio=document.getElementById('player');
+  myAudio.addEventListener('canplaythrough', function() {
+    this.currentTime = 0;
+    this.play();
+    this.currentTime=0;
+    this.play();
+  });
 </script>
 
 </body>

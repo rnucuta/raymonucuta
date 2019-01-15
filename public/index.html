@@ -6,17 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RaymoVerse</title>
-  <link href="img/favicon(5).ico" rel="icon" type="image/x-icon" />
+  <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
   <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
   <link rel='stylesheet' href='css/ewxggx.css'>
   <script src="animejs/anime.min.js"></script>
-
-  <style type="text/css">
+  <style id="__jsx-2158783874">
+  .title.jsx-2158783874 h2.jsx-2158783874{-webkit-letter-spacing:10px;-moz-letter-spacing:10px;-ms-letter-spacing:10px;letter-spacing:10px;font-size:1.2em;text-align:center;
+  /* font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */}
+  .title.jsx-2158783874 .subText.jsx-2158783874{text-align:center;font-size:0.5em;}
+  .homeSouth.jsx-2158783874{text-align:center;position:absolute;bottom:0;font-size:0.8em;}
+  .homeSouth2.jsx-2158783874{text-align:center;position:absolute;bottom:0;right:10px;font-size:0.8em;}
+  .homeSouth.jsx-2158783874 p.jsx-2158783874{margin:10px;}</style>
+<style type="text/css">
+  html, body{font-family: "Roboto", sans-serif;}
   html { overflow-y: hidden; overflow-x: hidden;}
   button:hover {
       cursor: url(img/mandelbrotcursornew.png), pointer;
     }
+    a:hover {
+        cursor: url(img/mandelbrotcursornew.png), pointer;
+      }
     html{
       min-height: 100%;
     }
@@ -48,63 +60,546 @@ h1 {
     background-color: #000;
     padding: 5px;
 }
+.center {
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45%;
+  transform: translate(-50%, -100%);
+  /* text-align:center;
+display:block; */
+  /* height: 50%; */
+}
+.middle{
+  /*position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, 10%);*/
+}
+.btn{
+  position: relative;
+  display: block;
+  color: white;
+  font-size:0.4em;
+  text-decoration:none;
+  margin:13px 0;
+  border: 2px solid #FFF;
+  padding: 14px 28px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+}
 
+.btn::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:-1;
+  transition: all 0.6s ease;
+}
+.btn1::before{
+  width:0;
+  height: 100%;
+}
+.btn:hover::before{
+  width: 500%;
+}
 
+.btn2::before{
+  background: #00b894;
+  width:100%;
+  height:0;
+}
+
+.btn2:hover::before{
+  height: 100%;
+}
+.btn3::before{
+
+  background: #0984e3;
+  width:100%;
+  height:0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.btn3:hover::before{
+  height:380%;
+}
+.btn4::before{
+  background: #d63031;
+  width:100%;
+  height:0;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.btn4:hover::before{
+  height:380%;
+}
+.btn2, .btn3, .btn4 {display:inline-block;}
+.center, .middle{
+  display:inline-block;
+}
 </style>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100");
+* {
+  margin: 0;
+  padding: 0;
+}
+.loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  overflow: hidden;
+}
+.loader:before {
+  position: absolute;
+  top: 50%;
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 3px solid;
+  border-color: transparent transparent #00cec9 transparent;
+  border-radius: 100%;
+  animation: 1s spin ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 40px;
+  color: #F27059;
+}
+.container > * {
+  margin: 150px;
+}
+
+.name {
+  display: flex;
+}
+
+.left,
+.right {
+  z-index: 10;
+  position: relative;
+  width: 32px;
+  height: 60px;
+  overflow: hidden;
+  color: #F27059;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  transition: width 0.4s 0.1s;
+}
+
+.right:hover,
+.left:hover {
+  transition: width 0.4s 0.1s;
+}
+
+.left:hover {
+  width: 160px;
+}
+
+.right:hover {
+  width: 200px;
+}
+
+span {
+  position: absolute;
+}
+
+#name {
+  left: 30px;
+}
+
+.intro {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: #ff7675;
+  width: 40%;
+  right: -1000px;
+  margin: 0;
+  height: 100vh;
+  color: #E3D5D1;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper > * {
+  margin: 10px;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 63%;
+  font-size: 24px;
+  transform: translateX(20px);
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+.text a {
+  position: relative;
+  color: #FBD1A2;
+  text-decoration: none;
+}
+.text > * {
+  margin: 10px 0;
+}
+
+.about-me {
+  text-align: center;
+  line-height: 45px;
+}
+
+#social {
+  font-size: 29px;
+}
+#social > * {
+  margin: 5px;
+}
+
+#work {
+  font-size: 20px;
+  margin: 40px 0;
+}
+#work > * {
+  margin: 5px;
+}
+
+.out {
+  transition: 1s all ease;
+  transform: translateX(450px);
+}
+
+.arrow {
+  margin:-40px;
+  /*display: flex;*/
+  align-items: center;
+  height: 60px;
+  animation: 0.5s bounce ease infinite;
+  cursor: url(img/mandelbrotcursornew.png), pointer;
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 700px) {
+  .loader {
+    display: none;
+  }
+
+  .container {
+    width: auto;
+  }
+
+  .intro {
+    width: 100%;
+  }
+
+  .wrapper > * {
+    margin: 0;
+  }
+
+  .text {
+    width: 100%;
+    display: block;
+    text-align: center;
+    z-index: -1;
+    margin: 0;
+    transform: translateX(0);
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .close {
+    width: 90%;
+  }
+}
+.example{
+  -webkit-transition: -webkit-transform 1.5s ease-in-out;
+}
+</style>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 </head>
 <body>
+  
+<!-- <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stackoverflow.svg" /> -->
+  <!-- <a href="index.html"><img src="img/raymograd1.png" alt="RaymoVerse" class="center"/ ></a> -->
+  <div class="loader"></div>
+<div style="position:fixed;left:0px;right:0px;">
+<canvas class="fireworks"></canvas>
+</div>
+<div class="container">
+  <div class="name" onmouseover="draw1()" onmouseout="draw2()">
 
+    <div class="left" style="color:#a29bfe;" onmouseover="moveLeft()" onmouseout="moveBack()">
+
+      <span> R</span>
+      <span id="name">aymo</span>
+    </div>
+
+    <div class="right" style="color:#b2bec3;">
+      <span> V</span>
+      <span id="name">erse</span>
+    </div>
+  </div>
+  <div class="arrow">
+    <i id="arrow" class="fa fa-angle-right" style="font-size:80px"></i></div>
+  <div class="intro">
+    <div class="wrapper">
+      <div class="close">
+        <i class="fa fa-remove"></i></div>
+      <div class="text">
+        <p class="about-me">
+          I'm Raymond Nucuta! </p>
+        <p>Navigate my website with the below icons:</p>
+         <p id="social">
+
+    <a href="projects.html" class="btn btn3">Portfolio</a>
+  <a href="about.html" class="btn btn2">About</a>
+    <a href="current.html" class="btn btn4">Current Projects</a>
+</p>
+  </div>
+        <p>
+          You can find my work on:</p>
+        <p id="social" class="buttons">
+          <a href="https://codepen.io/rnucuta/" target="_blank"> <i class="fa fa-codepen"></i></a> <a href="https://www.youtube.com/channel/UCQXbTPP54_ucriDJM_qXP-g" target="_blank"><i class="fa fa-youtube"></i></a>
+          <a href="https://github.com/rnucuta" target="_blank"> <i class="fa fa-github"></i></a>
+
+        </p>
+
+        <p id="work" class="buttons">Work with me?
+          <a href="mailto:rnucuta@gmail.com"><i class="fa fa-envelope"></i></a>
+
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<canvas id="gif" class="example"></canvas>
+
+  <div class="jsx-2158783874 homeSouth2"><p>&#169; Raymond Nucuta</p></div>
 <!-- <h1 style="z-index: 1;">Gradient Background Animation</h1> -->
-<canvas class="fireworks" style="z-index: 100;"></canvas>
+
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
 <!-- <script type="text/javascript"></script> -->
-<div id="lineDrawing" style="position:fixed;left:100px;top:100px;"> <svg viewBox="-140 -60 700 1000">
-  <g fill="none" stroke-width="1" class="lines">
-  <path class="pather" fill="#FFF77D" stroke="#5E89FB" d="M6.51 25.49L12.00 25.49L12.00 32.70L12.00 32.70Q18.22 26.12 25.32 24.12L25.32 24.12L25.32 30.38L25.32 30.38Q17.16 32.34 12.00 39.23L12.00 39.23L12.00 59.70L6.51 59.70L6.51 25.49Z"></path>
-  <path class="pather" stroke="#FB155A" d="M31.76 35.47L25.99 35.47L25.99 35.47Q27.40 24.08 39.04 24.08L39.04 24.08L39.04 24.08Q50.74 24.08 50.74 36.63L50.74 36.63L50.74 53.82L50.74 53.82Q50.74 55.86 52.61 55.86L52.61 55.86L52.61 55.86Q53.24 55.86 54.33 55.62L54.33 55.62L54.33 60.68L54.33 60.68Q52.89 61.03 50.88 61.03L50.88 61.03L50.88 61.03Q46.14 61.03 45.50 55.72L45.50 55.72L45.50 55.72Q40.62 61.03 34.78 61.03L34.78 61.03L34.78 61.03Q30.95 61.03 28.49 59.03L28.49 59.03L28.49 59.03Q25.25 56.43 25.25 51.33L25.25 51.33L25.25 51.33Q25.25 39.48 45.57 38.07L45.57 38.07L45.57 36.63L45.57 36.63Q45.57 28.90 39.04 28.90L39.04 28.90L39.04 28.90Q32.29 28.90 31.76 35.47L31.76 35.47Z"></path>
-  <path class="pather" stroke="#FB155A" d="M45.57 47.36L45.57 42.61L45.57 42.61Q30.53 43.35 30.53 51.05L30.53 51.05L30.53 51.05Q30.53 56.21 35.63 56.21L35.63 56.21L35.63 56.21Q39.11 56.21 42.41 53.54L42.41 53.54L42.41 53.54Q45.57 51.05 45.57 47.36L45.57 47.36Z"></path>
-  <path class="pather" stroke="#18FF92" d="M63.35 56.67L51.25 25.49L57.44 25.49L66.02 49.82L73.58 25.49L79.84 25.49L65.70 65.00L65.70 65.00Q64.54 68.45 61.70 69.54L61.70 69.54L61.70 69.54Q60.36 70.07 53.19 70.07L53.19 70.07L53.19 64.86L56.28 64.86L56.28 64.86Q57.37 64.86 57.86 64.86L57.86 64.86L57.86 64.86Q60.29 64.86 61.03 62.93L61.03 62.93L63.35 56.67Z"></path>
-  <path class="pather" stroke="#C26EFF" d="M81.30 25.49L85.10 25.49L85.91 28.16L85.91 28.16Q88.97 24.12 92.31 24.12L92.31 24.12L92.31 24.12Q95.65 24.12 97.48 28.16L97.48 28.16L97.48 28.16Q100.68 24.12 104.51 24.12L104.51 24.12L104.51 24.12Q110.70 24.12 110.70 32.77L110.70 32.77L110.70 59.70L105.53 59.70L105.53 33.75L105.53 33.75Q105.53 28.72 103.00 28.72L103.00 28.72L103.00 28.72Q100.71 28.72 99.30 31.25L99.30 31.25L99.30 31.25Q98.50 32.84 98.50 34.70L98.50 34.70L98.50 59.70L93.47 59.70L93.47 33.68L93.47 33.68Q93.47 28.72 90.87 28.72L90.87 28.72L90.87 28.72Q86.47 28.72 86.47 34.63L86.47 34.63L86.47 59.70L81.30 59.70L81.30 25.49Z"></path>
-  <path class="pather" stroke="#5E89FB" d="M127.07 24.12L127.07 24.12L127.07 24.12Q133.68 24.12 137.44 29.95L137.44 29.95L137.44 29.95Q140.68 34.80 140.68 42.61L140.68 42.61L140.68 42.61Q140.68 48.48 138.74 52.91L138.74 52.91L138.74 52.91Q135.16 61.14 126.93 61.14L126.93 61.14L126.93 61.14Q120.57 61.14 116.77 55.72L116.77 55.72L116.77 55.72Q113.32 50.77 113.32 42.61L113.32 42.61L113.32 42.61Q113.32 33.82 117.30 28.79L117.30 28.79L117.30 28.79Q121.09 24.12 127.07 24.12Z"></path>
+<!-- <div id="lineDrawing" style="position:fixed;left:100px;top:100px;"> <svg viewBox="-140 -60 700 1000"> -->
+  <!-- <g fill="none" stroke-width="1" class="lines">
+  <path class="pather" fill="#FFF77D" stroke="#000" d="M6.51 25.49L12.00 25.49L12.00 32.70L12.00 32.70Q18.22 26.12 25.32 24.12L25.32 24.12L25.32 30.38L25.32 30.38Q17.16 32.34 12.00 39.23L12.00 39.23L12.00 59.70L6.51 59.70L6.51 25.49Z"></path>
+  <path class="pather" fill="#FB155A" stroke="#FB155A" d="M31.76 35.47L25.99 35.47L25.99 35.47Q27.40 24.08 39.04 24.08L39.04 24.08L39.04 24.08Q50.74 24.08 50.74 36.63L50.74 36.63L50.74 53.82L50.74 53.82Q50.74 55.86 52.61 55.86L52.61 55.86L52.61 55.86Q53.24 55.86 54.33 55.62L54.33 55.62L54.33 60.68L54.33 60.68Q52.89 61.03 50.88 61.03L50.88 61.03L50.88 61.03Q46.14 61.03 45.50 55.72L45.50 55.72L45.50 55.72Q40.62 61.03 34.78 61.03L34.78 61.03L34.78 61.03Q30.95 61.03 28.49 59.03L28.49 59.03L28.49 59.03Q25.25 56.43 25.25 51.33L25.25 51.33L25.25 51.33Q25.25 39.48 45.57 38.07L45.57 38.07L45.57 36.63L45.57 36.63Q45.57 28.90 39.04 28.90L39.04 28.90L39.04 28.90Q32.29 28.90 31.76 35.47L31.76 35.47Z"></path>
+  <path class="pather" fill="#FFF" stroke="#FB155A" d="M45.57 47.36L45.57 42.61L45.57 42.61Q30.53 43.35 30.53 51.05L30.53 51.05L30.53 51.05Q30.53 56.21 35.63 56.21L35.63 56.21L35.63 56.21Q39.11 56.21 42.41 53.54L42.41 53.54L42.41 53.54Q45.57 51.05 45.57 47.36L45.57 47.36Z"></path>
+  <path class="pather" fill="#18FF92" stroke="#18FF92" d="M63.35 56.67L51.25 25.49L57.44 25.49L66.02 49.82L73.58 25.49L79.84 25.49L65.70 65.00L65.70 65.00Q64.54 68.45 61.70 69.54L61.70 69.54L61.70 69.54Q60.36 70.07 53.19 70.07L53.19 70.07L53.19 64.86L56.28 64.86L56.28 64.86Q57.37 64.86 57.86 64.86L57.86 64.86L57.86 64.86Q60.29 64.86 61.03 62.93L61.03 62.93L63.35 56.67Z"></path>
+  <path class="pather" fill="#C26EFF" stroke="#C26EFF" d="M81.30 25.49L85.10 25.49L85.91 28.16L85.91 28.16Q88.97 24.12 92.31 24.12L92.31 24.12L92.31 24.12Q95.65 24.12 97.48 28.16L97.48 28.16L97.48 28.16Q100.68 24.12 104.51 24.12L104.51 24.12L104.51 24.12Q110.70 24.12 110.70 32.77L110.70 32.77L110.70 59.70L105.53 59.70L105.53 33.75L105.53 33.75Q105.53 28.72 103.00 28.72L103.00 28.72L103.00 28.72Q100.71 28.72 99.30 31.25L99.30 31.25L99.30 31.25Q98.50 32.84 98.50 34.70L98.50 34.70L98.50 59.70L93.47 59.70L93.47 33.68L93.47 33.68Q93.47 28.72 90.87 28.72L90.87 28.72L90.87 28.72Q86.47 28.72 86.47 34.63L86.47 34.63L86.47 59.70L81.30 59.70L81.30 25.49Z"></path>
+  <path class="pather" fill="#5E89FB" stroke="#5E89FB" d="M127.07 24.12L127.07 24.12L127.07 24.12Q133.68 24.12 137.44 29.95L137.44 29.95L137.44 29.95Q140.68 34.80 140.68 42.61L140.68 42.61L140.68 42.61Q140.68 48.48 138.74 52.91L138.74 52.91L138.74 52.91Q135.16 61.14 126.93 61.14L126.93 61.14L126.93 61.14Q120.57 61.14 116.77 55.72L116.77 55.72L116.77 55.72Q113.32 50.77 113.32 42.61L113.32 42.61L113.32 42.61Q113.32 33.82 117.30 28.79L117.30 28.79L117.30 28.79Q121.09 24.12 127.07 24.12Z"></path>
   <path class="pather" stroke="#028910" d="M0 10 L277 10 L277 75"></path>
-  <path class="pather" stroke="#5E89FB" stroke-dasharray="47.12837600708008" d="M126.93 29.14L126.93 29.14L126.93 29.14Q123.06 29.14 120.88 33.19L120.88 33.19L120.88 33.19Q118.95 36.74 118.95 42.61L118.95 42.61L118.95 42.61Q118.95 48.02 120.53 51.43L120.53 51.43L120.53 51.43Q122.71 56.11 127 56.11L127 56.11L127 56.11Q130.94 56.11 133.12 52.07L133.12 52.07L133.12 52.07Q135.05 48.52 135.05 42.68L135.05 42.68L135.05 42.68Q135.05 36.60 133.05 33.12L133.05 33.12L133.05 33.12Q130.90 29.14 126.93 29.14Z"></path>
+  <path class="pather" fill="#FFF" stroke="#5E89FB" stroke-dasharray="47.12837600708008" d="M126.93 29.14L126.93 29.14L126.93 29.14Q123.06 29.14 120.88 33.19L120.88 33.19L120.88 33.19Q118.95 36.74 118.95 42.61L118.95 42.61L118.95 42.61Q118.95 48.02 120.53 51.43L120.53 51.43L120.53 51.43Q122.71 56.11 127 56.11L127 56.11L127 56.11Q130.94 56.11 133.12 52.07L133.12 52.07L133.12 52.07Q135.05 48.52 135.05 42.68L135.05 42.68L135.05 42.68Q135.05 36.60 133.05 33.12L133.05 33.12L133.05 33.12Q130.90 29.14 126.93 29.14Z"></path>
   <path class="pather" fill="#FFF77D" stroke="black" d="M150.05 59.70L138.66 25.49L144.70 25.49L153 53.12L161.26 25.49L167.31 25.49L155.95 59.70L150.05 59.70Z"></path>
-  <path class="pather" stroke="#FB155A" d="M187.05 49.08L192.68 49.08L192.68 49.08Q189.55 61.10 179.07 61.10L179.07 61.10L179.07 61.10Q172.57 61.10 168.77 55.69L168.77 55.69L168.77 55.69Q165.32 50.73 165.32 42.61L165.32 42.61L165.32 42.61Q165.32 34.84 168.56 29.88L168.56 29.88L168.56 29.88Q172.36 24.12 179 24.12L179 24.12L179 24.12Q191.97 24.12 192.82 43.70L192.82 43.70L170.74 43.70L170.74 43.70Q171.16 56.29 179.14 56.29L179.14 56.29L179.14 56.29Q185.47 56.29 187.05 49.08L187.05 49.08Z"></path>
-  <path class="pather" stroke="#FB155A" d="M170.95 39.09L187.05 39.09L187.05 39.09Q185.89 28.93 179 28.93L179 28.93L179 28.93Q172.36 28.93 170.95 39.09L170.95 39.09Z"></path>
-  <path class = "pather" stroke="#18FF92" d="M195.51 25.49L201.00 25.49L201.00 32.70L201.00 32.70Q207.22 26.12 214.32 24.12L214.32 24.12L214.32 30.38L214.32 30.38Q206.16 32.34 201.00 39.23L201.00 39.23L201.00 59.70L195.51 59.70L195.51 25.49Z"></path>
+  <path class="pather" fill="#FB155A" stroke="#FB155A" d="M187.05 49.08L192.68 49.08L192.68 49.08Q189.55 61.10 179.07 61.10L179.07 61.10L179.07 61.10Q172.57 61.10 168.77 55.69L168.77 55.69L168.77 55.69Q165.32 50.73 165.32 42.61L165.32 42.61L165.32 42.61Q165.32 34.84 168.56 29.88L168.56 29.88L168.56 29.88Q172.36 24.12 179 24.12L179 24.12L179 24.12Q191.97 24.12 192.82 43.70L192.82 43.70L170.74 43.70L170.74 43.70Q171.16 56.29 179.14 56.29L179.14 56.29L179.14 56.29Q185.47 56.29 187.05 49.08L187.05 49.08Z"></path>
+  <path class="pather" fill="#FFF" stroke="#FB155A" d="M170.95 39.09L187.05 39.09L187.05 39.09Q185.89 28.93 179 28.93L179 28.93L179 28.93Q172.36 28.93 170.95 39.09L170.95 39.09Z"></path>
+  <path class = "pather" fill="#18FF92" stroke="#18FF92" d="M195.51 25.49L201.00 25.49L201.00 32.70L201.00 32.70Q207.22 26.12 214.32 24.12L214.32 24.12L214.32 30.38L214.32 30.38Q206.16 32.34 201.00 39.23L201.00 39.23L201.00 59.70L195.51 59.70L195.51 25.49Z"></path>
   <path class="pather" stroke="#000000" d="M282 75 L0 75 L0 5"></path>
-  <path class="pather" stroke="#C26EFF" d="M214.32 49.08L220.02 49.08L220.02 49.08Q220.97 56.29 228.42 56.29L228.42 56.29L228.42 56.29Q235.91 56.29 235.91 51.01L235.91 51.01L235.91 51.01Q235.91 48.48 234.19 47.07L234.19 47.07L234.19 47.07Q232.36 45.56 227.65 43.91L227.65 43.91L226.63 43.52L226.63 43.52Q221.43 41.73 219.07 39.94L219.07 39.94L219.07 39.94Q215.70 37.30 215.70 33.57L215.70 33.57L215.70 33.57Q215.70 29.11 219.60 26.40L219.60 26.40L219.60 26.40Q222.97 24.08 227.79 24.08L227.79 24.08L227.79 24.08Q238.65 24.08 240.38 33.96L240.38 33.96L240.79 33.96L234.79 33.96Q233.91 28.69 227.72 28.69L227.72 28.69L227.72 28.69Q221.11 28.69 221.11 33.36L221.11 33.36L221.11 33.36Q221.11 36.42 229.97 39.55L229.97 39.55L229.97 39.55Q234.96 41.31 237.14 42.89L237.14 42.89L237.14 42.89Q241.39 45.91 241.39 50.87L241.39 50.87L241.39 50.87Q241.39 55.69 237.60 58.50L237.60 58.50L237.60 58.50Q234.01 61.10 228.28 61.10L228.28 61.10L228.28 61.10Q215.73 61.10 214.32 49.08L214.32 49.08Z"></path>
+  <path class="pather" fill="#C26EFF" stroke="#C26EFF" d="M214.32 49.08L220.02 49.08L220.02 49.08Q220.97 56.29 228.42 56.29L228.42 56.29L228.42 56.29Q235.91 56.29 235.91 51.01L235.91 51.01L235.91 51.01Q235.91 48.48 234.19 47.07L234.19 47.07L234.19 47.07Q232.36 45.56 227.65 43.91L227.65 43.91L226.63 43.52L226.63 43.52Q221.43 41.73 219.07 39.94L219.07 39.94L219.07 39.94Q215.70 37.30 215.70 33.57L215.70 33.57L215.70 33.57Q215.70 29.11 219.60 26.40L219.60 26.40L219.60 26.40Q222.97 24.08 227.79 24.08L227.79 24.08L227.79 24.08Q238.65 24.08 240.38 33.96L240.38 33.96L240.79 33.96L234.79 33.96Q233.91 28.69 227.72 28.69L227.72 28.69L227.72 28.69Q221.11 28.69 221.11 33.36L221.11 33.36L221.11 33.36Q221.11 36.42 229.97 39.55L229.97 39.55L229.97 39.55Q234.96 41.31 237.14 42.89L237.14 42.89L237.14 42.89Q241.39 45.91 241.39 50.87L241.39 50.87L241.39 50.87Q241.39 55.69 237.60 58.50L237.60 58.50L237.60 58.50Q234.01 61.10 228.28 61.10L228.28 61.10L228.28 61.10Q215.73 61.10 214.32 49.08L214.32 49.08Z"></path>
   <path class="pather" stroke="#028910" d="M0 5 L281.5 5 L281.5 75"></path>
-  <path class="pather" stroke="#5E89FB" d="M265.05 49.08L270.68 49.08L270.68 49.08Q267.55 61.10 257.07 61.10L257.07 61.10L257.07 61.10Q250.57 61.10 246.77 55.69L246.77 55.69L246.77 55.69Q243.32 50.73 243.32 42.61L243.32 42.61L243.32 42.61Q243.32 34.84 246.56 29.88L246.56 29.88L246.56 29.88Q250.36 24.12 257 24.12L257 24.12L257 24.12Q269.97 24.12 269.82 43.70L269.82 43.70L248.74 43.70L248.74 43.70Q249.16 56.29 257.14 56.29L257.14 56.29L257.14 56.29Q263.47 56.29 265.05 49.08L265.05 49.08Z"></path>
-  <path class="pather" stroke="#5E89FB" d="M248.95 39.09L265.05 39.09L265.05 39.09Q263.89 28.93 257 28.93L257 28.93L257 28.93Q250.36 28.93 248.95 39.09L248.95 39.09Z" style="stroke-dashoffset: 100px;"></path>
+  <path class="pather" fill="#5E89FB" stroke="#5E89FB" d="M265.05 49.08L270.68 49.08L270.68 49.08Q267.55 61.10 257.07 61.10L257.07 61.10L257.07 61.10Q250.57 61.10 246.77 55.69L246.77 55.69L246.77 55.69Q243.32 50.73 243.32 42.61L243.32 42.61L243.32 42.61Q243.32 34.84 246.56 29.88L246.56 29.88L246.56 29.88Q250.36 24.12 257 24.12L257 24.12L257 24.12Q269.97 24.12 269.82 43.70L269.82 43.70L248.74 43.70L248.74 43.70Q249.16 56.29 257.14 56.29L257.14 56.29L257.14 56.29Q263.47 56.29 265.05 49.08L265.05 49.08Z"></path>
+  <path class="pather" fill="#FFF" stroke="#5E89FB" d="M248.95 39.09L265.05 39.09L265.05 39.09Q263.89 28.93 257 28.93L257 28.93L257 28.93Q250.36 28.93 248.95 39.09L248.95 39.09Z" style="stroke-dashoffset: 100px;"></path>
   </g>
- </svg> </div>
+ </svg> </div> -->
 
-<canvas id="gif" class="example"></canvas>
 
 <script src='js/ymlarg.js'></script>
 <script src="js/index.js"></script>
 <script src="gifler/gifler.min.js"></script>
 <script type="text/javascript">
+function moveLeft(){
+  setTimeout(function() { $("#arrow").css("margin-left","200px");  }, 200);
+  
+}
+function moveBack(){
+  setTimeout(function() { $("#arrow").css("margin-left","0px");  }, 200);
+}
+function githubgo(){
+  window.open("https://github.com/rnucuta");
+}
  var canvas = document.getElementById("gif");
 var ctx1 = canvas.getContext("2d");
 var x;
 var y;
 function draw(){
-  x =(Math.random()*(window.innerWidth-300)).toString()+"px";
-  y =(Math.random()*(window.innerHeight-300)).toString()+"px";
-  canvas.style.left=x;
-  canvas.style.top=y;
+  x =(0.5*(window.innerWidth-800)).toString()+"px";
+  // y =(Math.random()*(window.innerHeight-300)).toString()+"px";
+  // x =(Math.random()*(window.innerWidth-300)).toString()+"px";
+  y =(0.5*(window.innerHeight-500)).toString()+"px";
+
+  canvas.style.left="50%";
+  canvas.style.top="50%";
+  $("#gif").css({"transform":"translate(-145%, -60%)"});
   canvas.style.position = "absolute";
-  console.log("x: "+x);
-  console.log("y: "+y);
+  // console.log("x: "+x);
+  // console.log("y: "+y);
   gifler('img/octopusanimationcrop.gif').animate('.example');
 }
+function draw2(){
+  canvas.style.left="50%";
+  canvas.style.top="50%";
+  $("#gif").css({"-webkit-transform":"translate(-145%, -60%)"});
+  canvas.style.position = "absolute";
+}
+function draw1(){
+  // ('.example').stop(); 
+  // ctx1.clearRect(0, 0, canvas.width, canvas.height);
+  canvas.style.left="50%";
+  canvas.style.top="50%";
+  $("#gif").css({"-webkit-transform":"translate(-290%, -60%)"});
+  canvas.style.position = "absolute";
+  // console.log("x: "+x);
+  // console.log("y: "+y);
+  // gifler('img/octopusanimationcrop.gif').animate('.example');
+}
 draw();
-setInterval(function(){ctx1.clearRect(0, 0, canvas.width, canvas.height);draw();}, 3000);
+// setInterval(function(){ctx1.clearRect(0, 0, canvas.width, canvas.height);draw();}, 3000);
 </script>
 <script>
+  $(".buttons").mouseover(function(){
+  $(this).addClass("animated jello");
+});
+
+$(".buttons").mouseout(function(){
+  $(this).removeClass("animated jello");
+});
+
+
+
+
+setTimeout(function() {
+  $(".loader").css("display", "none");
+  loaded.play();
+}, 2500);
+
+width = $(window).width();
+
+if (width <= 700) {
+  $(".name").click(function() {
+    $(".intro").css("right", "0");
+    // $(".text").css("transform", "translateX(20px)")
+    $(".wrapper").css("z-index", "20");
+  });
+
+  $(".close").click(function() {
+    $(".intro").css("right", "-1000px");
+  });
+
+}
+
+$("#arrow").click(function() {
+  open.play();
+  about.play();
+
+  if (width <= 700) {
+    $(".wrapper").css("z-index", "20");
+    $(".intro").css("transform", "translateX:100px")
+  }
+});
+
+$(".close").click(function() {
+  close.play();
+})
+
+var loaded = anime({
+
+  targets: '.name',
+  scale: [{
+    value: 4,
+    duration: 100,
+    elasticity: 1000
+  }, {
+    value: 4,
+    duration: 500,
+    elasticity: 1000
+  }],
+  duration: 4000,
+  autoplay: false,
+
+});
+
+var open = anime({
+  targets: '.intro',
+  translateX: -1000,
+  duration: 1000,
+  autoplay: false
+});
+
+var close = anime({
+  targets: '.intro',
+  translateX: 1800,
+  duration: 500,
+  autoplay: false,
+});
+
+var about = anime({
+  targets: '.text',
+  translateX: [{
+    value: -200,
+    duration: 100,
+    elasticity: 100
+  }, {
+    value: 0,
+    duration: 500,
+    elasticity: 100
+  }],
+  delay: 200
+});
+</script>
+
+<!-- <script>
   var lineDrawing = anime({
   targets: '#lineDrawing .lines path',
   strokeDashoffset: [anime.setDashoffset, 0],
@@ -114,7 +609,7 @@ setInterval(function(){ctx1.clearRect(0, 0, canvas.width, canvas.height);draw();
   direction: 'alternate',
   loop: false
 });
-</script>
+</script> -->
 
 </body>
 <!-- <script src="main.js"></script> -->
