@@ -12,18 +12,58 @@
   <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
   <link rel='stylesheet' href='css/ewxggx.css'>
   <script src="animejs/anime.min.js"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-list.svg'>
   <link rel="stylesheet" href="css/about.css">
   
   <style type="text/css">
+  .center1 {
+  position: absolute;
+  margin: auto;
+  top: 10%;
+  left: 77%;
+  /*transform: translate(-100%, -10%);*/
+}
+
+.menu {
+  width: 40px;
+  height: 40px;
+}
+
+
+.item {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+}
+
+i {
+  font-size: 24px;
+  color: #222222;
+}
+
   html { overflow-y: hidden; overflow-x: hidden;}
   a:hover {
       cursor: url(img/mandelbrotcursornew.png), pointer;
     }
     html{
       min-height: 100%;
+      margin:0;
+      padding:0;
+      overflow: hidden;
+      cursor: url(img/mandelbrotcursor12.png), pointer;
     }
     html:hover {
-      cursor: url(img/mandelbrotcursor12.png), auto;
+      cursor: url(img/mandelbrotcursor12.png), pointer;
     }
     .center {
       /* display: block;
@@ -40,9 +80,13 @@
     .fav{
       width: 150%;
       position: fixed;
-      left: -50%;
+      left: -70%;
       width: 50%;
-      transform: translateY(-10%);
+      transform: translate(-425%, -15%);
+      image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
     }
     .middle{
       position: absolute;
@@ -56,8 +100,9 @@
       color: white;
       font-size:1em;
       text-decoration:none;
-      margin:30px 0;
-      border: 2px solid #FFF;
+      margin:-100px 0;
+      border: 2px;
+      /*solid #fff*/
       padding: 10px 50px;
       text-transform: uppercase;
       overflow: hidden;
@@ -70,7 +115,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      /*transform: translate(-50%, -50%);*/
       z-index:-1;
       transition: all 0.6s ease;
     }
@@ -134,23 +179,27 @@ h1 {
 .homeSouth.jsx-2158783874 p.jsx-2158783874{margin:10px;}</style>
 
 </style>
+
 </head>
 <body>
-  <canvas id="game" width="128" height="128"></canvas>
+  <canvas class="canvas1" id="c"></canvas>
+<script  src="js/colorchange.js"></script>
+  <!-- <canvas id="game" width="128" height="128"></canvas> -->
   <div id="typedtext" class="type"></div>
   <div id="__next"><div class="jsx-2158783874" data-reactroot=""><div class="jsx-2158783874 homeSouth"><p class="jsx-2158783874 ctext">Note: Refresh the page if the octopus glitches!</p></div><div class="jsx-2158783874 homeSouth2"><p>&#169; Raymond Nucuta</p></div></div></div>
+  <!-- <img src="img/favicontree.ico" class="fav"> -->
   <div class="middle">
-    <img src="img/favicontree.ico" class="fav"/>
-    <a href="index.html"><img src="img/raymograd1.png" alt="RaymoVerse" class="center"></a>
-    <a href="projects.html" class="btn btn3">Projects</a>
-    <a href="about.html" class="btn btn2">About</a>
-    <a onclick="githubgo()" class="btn btn4">Github</a>
+    <img src="img/favicontree.ico" class="fav" style="image-rendering: pixelated; z-index: 100;width: 150%">
+    <!-- <a href="index.html"><img src="img/raymograd1.png" alt="RaymoVerse" class="center"></a> -->
+    <a href="projects.html" class="btn btn3"></a>
+    <!-- <a href="about.html" class="btn btn2">About</a>
+    <a onclick="githubgo()" class="btn btn4">Github</a> -->
   </div>
 
-  <audio id="player" src="Sound/1.mp3" autoplay>
+  <!-- <audio id="player" src="Sound/1.mp3" autoplay>
 <p>If you are reading this, it is because your browser does not support the audio element.</p>
   <embed src="Sound/1.mp3" width="180" height="90" loop="false" autostart="false" hidden="true" />
-  </audio>
+  </audio> -->
   <!-- <div id="player">
       <audio autoplay hidden>
        <source src="Sound/1.mp3" type="audio/mpeg" loop="true">
@@ -158,12 +207,27 @@ h1 {
       </audio>
   </div> -->
 <canvas id="gif" class="example"></canvas>
+<div class="center1 menu">
+    <div id="myMenu"></div>
+</div>
+<!-- <canvas id="game" class="canvas2" width="16" height="16"></canvas> -->
 
-<!-- <p class="line anim-typewriter">Hi, I'm Raymond. I'm a high school sophomore who likes programming and tinkering. I've started multiple apps for my company Nucuta Innovations, LLC. and I am currently an intern at Kronos Consulting, LLC. When not working or messing around with code, I use GIMP to make art or work on my electrical motorized bike. I love tinkering and building cool stuff with Arduinos! Check out my Github page or my projects page to see cool projects I am working on or have finished.</p> -->
+<!-- <p class="line anim-typewriter"> , I'm Raymond. I'm a high school sophomore who likes programming and tinkering. I've started multiple apps for my company Nucuta Innovations, LLC. and I am currently an intern at Kronos Consulting, LLC. When not working or messing around with code, I use GIMP to make art or work on my electrical motorized bike. I love tinkering and building cool stuff with Arduinos! Check out my Github page or my projects page to see cool projects I am working on or have finished.</p> -->
 <canvas class="fireworks"></canvas>
-<script src='js/ymlarg.js'></script>
-<script src="js/index.js"></script>
+<!-- <script src='js/ymlarg.js'></script> -->
+<!-- <script src="js/index.js"></script> -->
 <script src="gifler/gifler.min.js"></script>
+<script>
+  // get canvas context
+// var ctx3 = document.getElementById('game').getContext('2d');
+// // load image
+// var image = new Image();
+// image.onload = function () {
+//     // draw the image into the canvas
+//     ctx3.drawImage(image, 0, 0);
+// }
+// image.src = 'img/favicontree.ico';
+</script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 <script>
 var typed = new Typed(".element", {
@@ -173,6 +237,7 @@ var typed = new Typed(".element", {
 </script> -->
 <script src='js/type.js'></script>
 <script type="text/javascript">
+gifler('img/favicontree.ico').animate('.example');
 var canvas = document.getElementById("gif");
 var ctx1 = canvas.getContext("2d");
 var x;
@@ -187,8 +252,8 @@ function draw(){
   // console.log("y: "+y);
   gifler('img/octopusanimationcrop.gif').animate('.example');
 }
-draw();
-setInterval(function(){ctx1.clearRect(0, 0, canvas.width, canvas.height);draw();}, 3000);
+// draw();
+// setInterval(function(){ctx1.clearRect(0, 0, canvas.width, canvas.height);draw();}, 3000);
 </script>
 <script>
   var lineDrawing = anime({
@@ -201,14 +266,29 @@ setInterval(function(){ctx1.clearRect(0, 0, canvas.width, canvas.height);draw();
   loop: false
 });
 </script>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
+<script  src="js/dragmenu.js"></script>
 <script>
-  myAudio=document.getElementById('player');
-  myAudio.addEventListener('canplaythrough', function() {
-    this.currentTime = 0;
-    this.play();
-    this.currentTime=0;
-    this.play();
-  });
+  // myAudio=document.getElementById('player');
+  // myAudio.addEventListener('canplaythrough', function() {
+  //   this.currentTime = 0;
+  //   this.play();
+  //   this.currentTime=0;
+  //   this.play();
+  // });
+  $(function() {
+    // if (localStorage.getItem('countries')) {
+    //     $("#countries option").eq(localStorage.getItem('countries')).prop('selected', true);
+    // }
+
+    $("#item-list").on('click', function() {
+      if (!(localStorage.getItem('menu'))){
+        localStorage.setItem('menu', 'clicked');
+        alert("Drag the menu where you want!");
+      }
+    });
+});
 </script>
 
 </body>

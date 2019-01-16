@@ -2,17 +2,42 @@
 
 /* Global */
 html {
-      min-height: 100%;
-      /*overflow: hidden;*/
+      /*min-height: 100%;*/
+      margin:0;
+      padding:0;
+      overflow: hidden;
 }
+.canvas1 {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+/*  cursor: pointer;*/
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+/*canvas:hover {
+  cursor: url(img/mandelbrotcursornew.png), auto;
+}*/
+.canvas2 {  
+  width: 256px;
+  height: 256px;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  position:absolute;
+  width:50%;
+  transform:translate(-50%, -30%);
+} 
 
 body {
-      height: calc(100vh - 8em);
-      padding: 4em;
-      color: rgba(255, 255, 255, 0.75);
+      /*height: calc(100vh - 8em);
+      padding: 4em;*/
+      /*color: rgba(255, 255, 255, 0.75);*/
       /*color:black;*/
       
-      background-color: rgb(25, 25, 25);
+      /*background-color: rgb(25, 25, 25);*/
 }
 
 .type {
