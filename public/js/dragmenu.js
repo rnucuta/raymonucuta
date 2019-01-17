@@ -153,8 +153,8 @@ class Menu {
 var menu = new Menu("#myMenu");
 var item1 = new Item("list");
 var item2 = new Item("home", "#FF5C5C");
-var item3 = new Item("torso-business", "#FFF15C");
-var item4 = new Item("usb", "#64F592");
+var item4 = new Item("torso-business", "#FFF15C");
+var item3 = new Item("usb", "#64F592");
 var item5 = new Item("list-bullet", "#5CD1FF");
 var item6 = new Item("social-github", "#ffeaa7");
 var item7 = new Item("mail", "#00b894");
@@ -202,7 +202,7 @@ $("#item-torso-business").hover(function() {
 }, function() {
     $(this).css('cursor','auto');
 });
-$("#item-social-github").click(function() {
+$("#item-torso-business").click(function() {
     window.location.href = "about.html";
 });
 $("#item-list-bullet").hover(function() {
