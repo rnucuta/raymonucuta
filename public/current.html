@@ -76,6 +76,7 @@
           </div>
           <div class="info"> EduBase is an educational app for developing countries built for KaiOS, a cheap, low-powered operating system commonly found on "feature phones". Check out the project: 
             <a href="https://github.com/rnucuta/EduBase" target="_blank">EduBase on Github</a>.
+            <img src="img/faviconcode.ico" class="fav" style="image-rendering: pixelated; z-index: 100;width: 100%">
           </div>
           </div>
         </li>
@@ -123,9 +124,7 @@
     <div class="title flash">About this Page</div>
     Just to provide some more clarification:
     <div class="exp">
-      This page is for documenting all of my past projects 
-      and any changes that have happened to me since the 
-      beginning of this website. Think of this page as a timeline or a portfolio of sorts.
+       This page is for giving anyone who is viewing a sense of what I am currently working on for fun, for work, or for my business.
     </div>
   </div>
 
@@ -144,7 +143,7 @@
  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
   <canvas class="canvas1" id="c"></canvas>
-  <canvas class="canvas1" id="c" style="position:fixed;top:1000px"></canvas>
+  <canvas class="canvas1" id="c1" style="position:fixed;top:1000px"></canvas>
   
 <script  src="js/colorchangep.js"></script>
 <style>
@@ -188,7 +187,12 @@ a:hover {
 .title:hover {
   cursor: url(img/mandelbrotcursor12.png), pointer;
 }
-
+canvas:hover {
+  cursor: url(img/mandelbrotcursor12.png), pointer;
+}
+#c:hover{
+  cursor: url(img/mandelbrotcursor12.png), pointer;
+}
 </style>
 <script  src="js/dragmenu.js"></script>
 </body>
