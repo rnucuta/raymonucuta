@@ -153,9 +153,9 @@ class Menu {
 var menu = new Menu("#myMenu");
 var item1 = new Item("list");
 var item2 = new Item("home", "#FF5C5C");
-var item4 = new Item("torso-business", "#FFF15C");
-var item3 = new Item("usb", "#64F592");
-var item5 = new Item("list-bullet", "#5CD1FF");
+var item3 = new Item("torso-business", "#FFF15C");
+var item4 = new Item("usb", "#64F592");
+// var item5 = new Item("list-bullet", "#5CD1FF");
 var item6 = new Item("social-github", "#ffeaa7");
 var item7 = new Item("mail", "#00b894");
 
@@ -163,7 +163,7 @@ menu.add(item1);
 menu.add(item2);
 menu.add(item3);
 menu.add(item4);
-menu.add(item5);
+// menu.add(item5);
 menu.add(item6);
 menu.add(item7);
 $(document).delay(50).queue(function(next) {
@@ -195,7 +195,7 @@ $("#item-usb").hover(function() {
     $(this).css('cursor','auto');
 });
 $("#item-usb").click(function() {
-    window.location.href = "current.html";
+    window.location.href = "resume.html";
 });
 $("#item-torso-business").hover(function() {
     $(this).css('cursor','url(img/mandelbrotcursornew.png), pointer');
@@ -205,14 +205,14 @@ $("#item-torso-business").hover(function() {
 $("#item-torso-business").click(function() {
     window.location.href = "about.html";
 });
-$("#item-list-bullet").hover(function() {
-    $(this).css('cursor','url(img/mandelbrotcursornew.png), pointer');
-}, function() {
-    $(this).css('cursor','auto');
-});
-$("#item-list-bullet").click(function() {
-    window.location.href = "projects.html";
-});
+// $("#item-list-bullet").hover(function() {
+//     $(this).css('cursor','url(img/mandelbrotcursornew.png), pointer');
+// }, function() {
+//     $(this).css('cursor','auto');
+// });
+// $("#item-list-bullet").click(function() {
+//     window.location.href = "projects.html";
+// });
 $("#item-social-github").hover(function() {
     $(this).css('cursor','url(img/mandelbrotcursornew.png), pointer');
 }, function() {

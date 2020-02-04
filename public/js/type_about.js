@@ -1,8 +1,8 @@
 // set up text to print, each item in array is new line
 var aText = new Array(
-"Hi, I'm Raymond Nucuta.","","I'm a high school sophomore who likes programming and tinkering. I've started multiple apps for my company Nucuta Innovations, LLC. and I am currently an intern at Kronos Consulting, LLC. When not working or messing around with code, I use GIMP to make art or work on my electrical motorized bike. I love tinkering and building cool stuff with Arduinos! Check out my Github page or my projects page to see cool projects I am working on or have finished."
+"Hi, I'm Raymond Nucuta.","","I'm an Arizonan high school junior who created this site to share my initiatives and showcase my programming skills.","","So, what do I do? Currently, I am invested in a few projects: I'm the co-founder/CTO of Screening On Wheels, a 501(c)(3) cancer screening non-profit; I'm developing an automated crypto hedge fund with a classmate; and I'm the co-founder/CTO of Ecotivity LLC, a recycling business working with Georgia Tech. For more about me, please check out my Github page or my résumé."
 );
-var iSpeed = 100; // time delay of print out
+var iSpeed = 30; // time delay of print out
 var iIndex = 0; // start printing array at this posision
 var iArrLength = aText[0].length; // the length of the text array
 var iScrollAt = 20; // start scrolling up at this many lines

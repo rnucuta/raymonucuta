@@ -15,18 +15,18 @@
       position: fixed;
       left: -280%;
       width: 70%;
-      transform: translate(-412%, 10%);
+      transform: translate(-410%, 50%);
       image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-crisp-edges;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
     }
-    .middle{
+    /*.middle{
       position: absolute;
       top:5%;
       right: 10%;
       transform: translateY(10%);
-    }
+    }*/
     .btn{
       position: relative;
       display: block;
