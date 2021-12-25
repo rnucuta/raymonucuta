@@ -1,6 +1,6 @@
 // set up text to print, each item in array is new line
 var aText = new Array(
-"Hi, I'm Raymond Nucuta.","","I'm an Arizonan high school junior who created this site to share my initiatives and showcase my programming skills.","","So, what do I do? Currently, I am invested in a few projects: I'm the co-founder/CTO of Screening On Wheels, a 501(c)(3) cancer screening non-profit; I'm developing an automated crypto hedge fund with a classmate; and I'm the co-founder/CTO of Ecotivity LLC, a recycling business working with Georgia Tech. For more about me, please check out my Github page or my résumé."
+"Hi, I'm Raymond Nucuta.","","I'm an ASU CS student who created this site to share my initiatives and showcase my programming skills.","","So, what do I do? Currently, I am invested in a few projects: I'm the co-founder/CTO of Screening On Wheels, a 501(c)(3) cancer screening non-profit; I'm developing an automated crypto hedge fund with a classmate; and I'm the co-founder/CTO of Ecotivity LLC, a recycling business working with Georgia Tech. For more about me, please check out my Github page or my résumé."
 );
 var iSpeed = 30; // time delay of print out
 var iIndex = 0; // start printing array at this posision
