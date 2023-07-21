@@ -1,6 +1,6 @@
 // set up text to print, each item in array is new line
 var aText = new Array(
-"Résumé avaliable at raymonucuta.herokuapp.com/resume.pdf!"
+"Résumé avaliable at raymonucuta.com/resume.pdf!"
 );
 var iSpeed = 75; // time delay of print out
 var iIndex = 0; // start printing array at this posision
